@@ -200,9 +200,12 @@ level_cleared = False
 # Add to the image loading section
 bg_img = pygame.image.load('assets/bg.png')
 bg_img = pygame.transform.scale(bg_img, (WIDTH, HEIGHT))  # Scale to fit screen
-flower_bg_img = pygame.image.load('assets/flower.png')
+flower_bg_img = pygame.image.load('assets/doorway.png')
+flower_bg_img2 = pygame.image.load('assets/flower.png')
 flower_bg_img = pygame.transform.scale(flower_bg_img, (WIDTH, HEIGHT))
-dungeon_bg_img = pygame.image.load('assets/dungeon_thing.jpg')  # Load the dungeon background
+flower_bg_img2 = pygame.transform.scale(flower_bg_img2, (WIDTH, HEIGHT))
+dungeon_bg_img = pygame.image.load('assets/dungeon_thing.jpg')
+# Load the dungeon background
 dungeon_bg_img = pygame.transform.scale(dungeon_bg_img, (WIDTH, HEIGHT))  # Scale to fit screen
 
 # Add these variables near other game state variables
@@ -1009,6 +1012,8 @@ while running:
         # Choose appropriate background based on level
         if current_room == "level_1":
             screen.blit(flower_bg_img, (0, 0))  # Use flower background for level 1
+        elif current_level == "level_2":
+            screen.blit(flower_bg_img2, (0, 0))
         elif current_level > 4:  # Use dungeon background for levels 5 and 6
             screen.blit(dungeon_bg_img, (0, 0))
         else:
